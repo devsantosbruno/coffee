@@ -6,9 +6,19 @@
     android:padding="12dp"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/nome_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Nome"
+        android:inputType="textCapWords" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="Quantidade"
         android:textAllCaps="true" />
 
@@ -45,23 +55,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Valor total:"
+        android:text="Adicionais:"
         android:textAllCaps="true" />
 
-    <TextView
-        android:id="@+id/valorTotal"
+    <CheckBox
+        android:id="@+id/copo_descartavel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="$0"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:text="Copo descartável"
+        android:textSize="14sp"
+        android:textAllCaps="true"/>
+
+    <CheckBox
+        android:id="@+id/com_leite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Com leite"
+        android:textSize="14sp"
+        android:textAllCaps="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="true"
         android:onClick="atualizar"
-        android:text="Atualizar o carrinho" />
+        android:text="Atualizar o pedido" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Resumo do pedido:"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/resumoDoPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="R$0"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </LinearLayout>
