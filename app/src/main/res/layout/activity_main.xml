@@ -1,101 +1,90 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/nome_usuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:hint="Nome"
-        android:inputType="textCapWords" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Quantidade"
-        android:textAllCaps="true" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:onClick="subtracao"
-            android:text="-" />
+        <EditText
+            android:id="@+id/nome_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:hint="@string/nome"
+            android:inputType="textCapWords" />
 
         <TextView
-            android:id="@+id/quantidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:text="0"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:layout_marginBottom="5dp"
+            android:text="@string/quantidade"
+            android:textAllCaps="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="subtracao"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/quantidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="adicao"
+                android:text="+" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/adicionais"
+            android:textAllCaps="true" />
+
+        <CheckBox
+            android:id="@+id/copo_descartavel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copo_descartavel"
+            android:textAllCaps="true"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:id="@+id/com_leite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/com_leite"
+            android:textAllCaps="true"
+            android:textSize="14sp" />
 
         <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:onClick="adicao"
-            android:text="+" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="atualizar"
+            android:text="@string/atualizar_pedido"
+            android:textAllCaps="true" />
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Adicionais:"
-        android:textAllCaps="true" />
-
-    <CheckBox
-        android:id="@+id/copo_descartavel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Copo descartável"
-        android:textSize="14sp"
-        android:textAllCaps="true"/>
-
-    <CheckBox
-        android:id="@+id/com_leite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Com leite"
-        android:textSize="14sp"
-        android:textAllCaps="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textAllCaps="true"
-        android:onClick="atualizar"
-        android:text="Atualizar o pedido" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Resumo do pedido:"
-        android:textAllCaps="true" />
-
-    <TextView
-        android:id="@+id/resumoDoPedido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="R$0"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
-
-</LinearLayout>
+</ScrollView>

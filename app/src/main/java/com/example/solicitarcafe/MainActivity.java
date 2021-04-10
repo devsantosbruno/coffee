@@ -1,5 +1,7 @@
 package com.example.solicitarcafe;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -8,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.NumberFormat;
 
 /**
  * Este aplicativo exibe um pedido de café.
@@ -56,7 +57,14 @@ public class MainActivity extends AppCompatActivity {
         boolean adicionarLeite = comLeite.isChecked();
         int preco = calcularPreco();
         String mensagemValor = resumoPedido(nome, preco, adicionarDescartavel, adicionarLeite);
-        mostrarMensagem(mensagemValor);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Pedido do café " + nome);
+        intent.putExtra(intent.EXTRA_TEXT, mensagemValor);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     private int calcularPreco() {
@@ -64,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String resumoPedido(String nome, int preco, boolean adicionarDescartavel, boolean adicionarLeite) {
-        String mensagemValor = "Nome: " + nome;
-        mensagemValor += "\nQuantidade: " + quantidade;
-        mensagemValor += "\nAdicionar copo descartável? " + adicionarDescartavel;
-        mensagemValor += "\nAdicionar leite? " + adicionarLeite;
-        mensagemValor += "\nTotal: R$" + calcularPreco();
-        mensagemValor += "\n\nObrigado e volte sempre!";
+        String mensagemValor = getString(R.string.atualizar_pedido);
+        mensagemValor += "\n" + getString(R.string.quantidade);
+        mensagemValor += "\n" + getString(R.string.copo_descartavel);
+        mensagemValor += "\n" + getString(R.string.com_leite);
+        mensagemValor += "\n" + getString(R.string.calcular_preco);
+        mensagemValor += "\n\n" + getString(R.string.obrigado);
         return mensagemValor;
     }
 
@@ -80,12 +88,6 @@ public class MainActivity extends AppCompatActivity {
         TextView quantidadeTextView = (TextView) findViewById(
                 R.id.quantidade);
         quantidadeTextView.setText("" + numeroCafes);
-    }
-
-    private void mostrarMensagem(String message) {
-        TextView resumoDoPedido = (TextView) findViewById(
-                R.id.resumoDoPedido);
-        resumoDoPedido.setText(message);
     }
 
 }

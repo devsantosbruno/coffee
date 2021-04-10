@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">solicitar cafe</string>
+    <string name="adicionais">Additional</string>
+    <string name="obrigado">Thank you and come back often!</string>
+    <string name="quantidade">Quantity</string>
+    <string name="nome">Name</string>
+    <string name="copo_descartavel">Plastic cup</string>
+    <string name="com_leite">With milk</string>
+    <string name="atualizar_pedido">Update the order</string>
+    <string name="calcular_preco">Calculate</string>
+</resources>
