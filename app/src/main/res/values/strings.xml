@@ -1,11 +1,11 @@
-    <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">solicitar cafe</string>
-        <string name="nome">Nome</string>
+    <string name="nome">Nome</string>
     <string name="adicionais">Adicionais</string>
     <string name="obrigado">Obrigado e volte sempre!</string>
-        <string name="quantidade">Quantidade</string>
-        <string name="copo_descartavel">Copo descartável</string>
-        <string name="com_leite">Com leite</string>
-        <string name="atualizar_pedido">Atualizar o pedido</string>
-        <string name="calcular_preco" translatable="false">Calcular preco</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="copo_descartavel">Copo descartável</string>
+    <string name="com_leite">Com leite</string>
+    <string name="atualizar_pedido">Atualizar o pedido</string>
+    <string name="calcular_preco">Calcular preco</string>
 </resources>
